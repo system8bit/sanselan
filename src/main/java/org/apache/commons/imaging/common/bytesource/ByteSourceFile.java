@@ -42,7 +42,7 @@ public class ByteSourceFile extends ByteSource
         FileInputStream is = null;
         BufferedInputStream bis = null;
         is = new FileInputStream(file);
-        bis = new BufferedInputStream(is);
+        bis = new BufferedInputStream(is, 8192);
         return bis;
     }
 
@@ -96,7 +96,7 @@ public class ByteSourceFile extends ByteSource
         try
         {
             is = new FileInputStream(file);
-            is = new BufferedInputStream(is);
+            is = new BufferedInputStream(is, 8192);
             byte buffer[] = new byte[1024];
             int read;
             while ((read = is.read(buffer)) > 0)

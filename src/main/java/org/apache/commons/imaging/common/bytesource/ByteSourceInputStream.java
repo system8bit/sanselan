@@ -30,7 +30,7 @@ public class ByteSourceInputStream extends ByteSource
     public ByteSourceInputStream(InputStream is, String filename)
     {
         super(filename);
-        this.is = new BufferedInputStream(is);
+        this.is = new BufferedInputStream(is, 8192);
     }
 
     private class CacheBlock

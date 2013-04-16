@@ -56,7 +56,7 @@ public class IoUtils implements SanselanConstants
         {
             os = new ByteArrayOutputStream(4096);
 
-            is = new BufferedInputStream(is);
+            is = new BufferedInputStream(is, 8192);
 
             int count;
             byte[] buffer = new byte[4096];
@@ -177,7 +177,7 @@ public class IoUtils implements SanselanConstants
 
         try
         {
-            bis = new BufferedInputStream(src);
+            bis = new BufferedInputStream(src, 8192);
             bos = new BufferedOutputStream(dst);
 
             int count;
